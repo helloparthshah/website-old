@@ -38372,7 +38372,7 @@ D.HV.prototype={
 $1:function(a){return this.a.Lt(this.b,a)}}
 Y.o3.prototype={
 H:function(a){X.l7(H.b([],u.Bl))
-return S.UV(new Y.ni(null),"Flutter Demo")}}
+return S.UV(new Y.ni(null),"Neuble")}}
 Y.ni.prototype={
 at:function(){return new Y.zV($.CW(),null,C.m)}}
 Y.zV.prototype={
