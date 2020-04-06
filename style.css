@@ -504,10 +504,11 @@ body {
 }
 
 .icon-link {
-    position: absolute;
-    left: 5px;
-    bottom: 5px;
-    width: 32px;
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    width: 50px;
+    z-index: 99999;
 }
 
 .icon-link img {
@@ -572,5 +573,14 @@ body {
     .el:nth-child(5) .el__bg {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
+    }
+    .el__heading {
+        font-size: 100px;
+    }
+    .el__text {
+        font-size: 65px;
+    }
+    .el__index {
+        font-size: 40vw;
     }
 }
