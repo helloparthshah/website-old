@@ -262,11 +262,15 @@ html {
     bottom: 0;
     left: 0;
     transform: translateZ(-1px) scale(1.5);
+    /* background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; */
     height: 100vh;
     z-index: -1;
 }
 
 .bg1::after {
+    /* background-image: url("https://i.imgur.com/cB8yvSS.png"); */
     background: linear-gradient(90deg, #eee 1%, transparent 5%) 1px 0, linear-gradient(180deg, #eee 1%, transparent 5%) 1px 0, #fff;
     background-size: 50px 50px;
     width: 100vw;
@@ -538,12 +542,15 @@ p {
 }
 
 .card__side--front {
-    background: #4285f4;
+    background: /* #014A96 */
+    #4285f4;
     border-radius: 50px;
+    /* box-shadow: 37px 37px 74px #002d5b, -37px -37px 74px #0053a5; */
 }
 
 .card__side--back {
-    background: #4285f4;
+    background: /* #014A96 */
+    #4285f4;
     border-radius: 50px;
     transform: rotateY(180deg);
 }
@@ -555,6 +562,15 @@ p {
 .card:hover .card__side--back {
     transform: rotate(0);
 }
+
+
+/* .card:focus .card__side--front {
+    transform: rotateY(-180deg);
+}
+
+.card:focus .card__side--back {
+    transform: rotate(0);
+} */
 
 .card__description {
     font-size: 20px;
@@ -630,23 +646,24 @@ p {
         font-size: 30px;
     }
     .navbar {
+        /* height: 60px; */
         padding-left: 2%;
         padding-right: 2%;
         position: fixed;
         flex-direction: column;
     }
     .navbar.responsive .dropdown {
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
         transform: translateY(0px);
         width: 100%;
-        opacity: 1;
+        height: 100%;
     }
     .navbar div:not(:first-child) {
         width: 100%;
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
         color: black;
         transform: translateY(-500px);
-        opacity: 0;
+        height: 0;
     }
     .icon {
         float: right;
