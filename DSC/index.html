@@ -96,8 +96,8 @@
             <section id="team" class="section parallax bg2">
                 <section class="content">
                     <h1 class="slide-in from-down" style="color: white; padding-top: 40px;">Our Team</h1>
-                    <div class="cards">
-                        <div class="card">
+                    <div class="cards" id="test">
+                        <!-- <div class="card">
                             <div class="card__side card__side--front card__side--front-1 slide-in emerge">
                                 <div class="card__description">
                                     <div class="memb" style="background: url(' https://media-exp1.licdn.com/dms/image/C4D03AQHZn2qIHJhgHA/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=r_639cUZnjcht-HrgQiW8soCQPIBU14Ivt5oTtIhndQ ');"></div>
@@ -109,33 +109,7 @@
                             <div class="card__side card__side--back">
                                 <div class="card__description">Testing</div>
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="card__side card__side--front card__side--front-1 slide-in emerge">
-                                <div class="card__description">
-                                    <div class="memb"></div>
-                                    <div>
-                                        <h1>XYZ</h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card__side card__side--back">
-                                <div class="card__description">Testing</div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card__side card__side--front card__side--front-1 slide-in emerge">
-                                <div class="card__description">
-                                    <div class="memb"></div>
-                                    <div>
-                                        <h1>ABC</h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card__side card__side--back">
-                                <div class="card__description">Testing</div>
-                            </div>
-                        </div>
+                        </div> -->
                     </div>
                 </section>
             </section>
@@ -155,6 +129,44 @@
             document.getElementById("artboard").style.display = "none";
             document.getElementById("page").style.display = "block";
         }
+    </script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script type='text/javascript'>
+        var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1a6mqHzX8MpPBKrJs6-XSQKOc9odK8iRQbxM15rZ2tSk/edit?usp=sharing';
+
+        function init() {
+            Tabletop.init({
+                key: publicSpreadsheetUrl,
+                callback: showInfo,
+                simpleSheet: true
+            })
+        }
+
+        function showInfo(data, tabletop) {
+            data.forEach(d => {
+                var iDiv = document.createElement('div');
+
+                iDiv.innerHTML = `<div class="card">
+                    <div class="card__side card__side--front card__side--front-1 ">
+                        <div class="card__description">
+                            <div class="memb" style="background: url(' https://media-exp1.licdn.com/dms/image/C4D03AQHZn2qIHJhgHA/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=r_639cUZnjcht-HrgQiW8soCQPIBU14Ivt5oTtIhndQ ');"></div>
+                            <div>
+                                <h1>${d['First Name']} ${d['Last Name']}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card__side card__side--back">
+                        <div class="card__description">Testing</div>
+                    </div></div>`;
+
+                document.getElementById('test').appendChild(iDiv);
+                console.log(d['First Name'] + ' ' + d['Last Name']);
+            })
+
+        }
+
+        window.addEventListener('DOMContentLoaded', init)
     </script>
     <script src="./app.js"></script>
 </body>
