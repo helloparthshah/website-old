@@ -637,6 +637,28 @@ h4 {
     justify-content: center;
 }
 
+canvas {
+    display: block;
+}
+
+.hd {
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+}
+
+#particles-js {
+    position: relative;
+    z-index: -10;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
 @media only screen and (max-width: 1000px) {
     .from-down1,
     .from-down2.from-down3 {
@@ -755,26 +777,4 @@ h4 {
     #team {
         height: 60vh;
     }
-}
-
-canvas {
-    display: block;
-}
-
-.hd {
-    position: absolute;
-    width: 100vw;
-    text-align: center;
-}
-
-#particles-js {
-    position: relative;
-    z-index: -10;
-    width: 100%;
-    height: 100vh;
-    background-color: transparent;
-    background-image: url("");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
 }
