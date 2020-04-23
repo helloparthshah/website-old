@@ -1,4 +1,3 @@
-
 var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1a6mqHzX8MpPBKrJs6-XSQKOc9odK8iRQbxM15rZ2tSk/edit?usp=sharing';
 
 function init() {
@@ -85,7 +84,7 @@ const appearOptions = {
     rootMargin: "0px 0px -250px 0px"
 };
 
-const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
             return;
@@ -109,8 +108,7 @@ function Load() {
 function showPage() {
 
     particlesJS.load("particles-js", 'assets/config.json');
-    particlesJS.load("team", 'assets/config.json');
-    setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 0);
+    setTimeout(function() { window.dispatchEvent(new Event('resize')); }, 0);
 
     document.getElementById("artboard").style.display = "none";
     document.getElementById("page").style.display = "block";
@@ -119,7 +117,7 @@ function showPage() {
 
 
 
-$(function () {
+$(function() {
     var sliding = (startClientX = startPixelOffset = pixelOffset = currentSlide = 0);
     slideCount = $(".slide").length;
 
@@ -162,7 +160,7 @@ $(function () {
                 (currentSlide == 0 && event.clientX > startClientX) ||
                 (currentSlide == slideCount - 1 && event.clientX < startClientX)
             )
-                // Set ratio to 3 means image will be moving by 3 pixels each time user moves it's pointer by 1 pixel. (Rubber-band effect)
+            // Set ratio to 3 means image will be moving by 3 pixels each time user moves it's pointer by 1 pixel. (Rubber-band effect)
                 touchPixelRatio = 3;
             // Calculate move distance.
             pixelOffset = startPixelOffset + deltaSlide / touchPixelRatio;
