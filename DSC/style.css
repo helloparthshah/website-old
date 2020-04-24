@@ -262,7 +262,8 @@ html {
 }
 
 .static {
-    background-color: #D2E3FC;
+    /* background-color: #D2E3FC; */
+    background: rgba(250, 166, 0, 0.2);
 }
 
 .parallax::after {
@@ -277,20 +278,15 @@ html {
     z-index: -1;
 }
 
-.bg1::after {
+.bg::after {
     background: linear-gradient(90deg, #eee 1%, transparent 5%) 1px 0, linear-gradient(180deg, #eee 1%, transparent 5%) 1px 0, #fff;
     background-size: 50px 50px;
     width: 100vw;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
 }
 
-.bg2::after {
-    background: #004080;
-    background: linear-gradient(90deg, #eee 1%, transparent 5%) 1px 0, linear-gradient(180deg, #eee 1%, transparent 5%) 1px 0, #fff;
-    background-size: 50px 50px;
-    width: 100vw;
-}
-
-.bg1 svg {
+.bg svg {
     width: 90%;
     height: auto;
 }
@@ -614,9 +610,6 @@ h3 {
 }
 
 #footer {
-    background: linear-gradient(90deg, #eee 1%, transparent 5%) 1px 0, linear-gradient(180deg, #eee 1%, transparent 5%) 1px 0, #fff;
-    background-size: 50px 50px;
-    width: 100vw;
     height: 50vh;
 }
 
@@ -639,12 +632,15 @@ h4 {
 
 canvas {
     display: block;
+    position: fixed;
+    z-index: 0;
 }
 
 .hd {
     position: absolute;
     width: 100vw;
     text-align: center;
+    z-index: 10;
 }
 
 #particles-js {
@@ -657,6 +653,7 @@ canvas {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
+    background-attachment: fixed;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -676,8 +673,7 @@ canvas {
     .card__side {
         font-size: 20px;
     }
-    .bg1,
-    .bg2,
+    .bg,
     .section {
         height: 100vh;
     }

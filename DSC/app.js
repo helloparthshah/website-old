@@ -107,7 +107,7 @@ function Load() {
 
 function showPage() {
 
-    particlesJS.load("particles-js", 'assets/config.json');
+    particlesJS.load("particles-js", 'assets/config2.json');
     setTimeout(function() { window.dispatchEvent(new Event('resize')); }, 0);
 
     document.getElementById("artboard").style.display = "none";
