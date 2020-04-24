@@ -39,22 +39,42 @@ function showInfo(data, tabletop) {
 window.addEventListener('DOMContentLoaded', init)
 
 const sliders = document.querySelectorAll('.slide-in');
+scrl();
 
 function scrl() {
 
     const nav = document.querySelector('#nbr');
     var test = document.querySelector('html');
-    console.log(test.scrollTop);
+    var test1 = document.getElementById("a");
+    var test2 = document.getElementById("wksp");
+    var test3 = document.getElementById("slideshow");
+    var test4 = document.getElementById("team");
+    var test5 = document.getElementById("footer");
+    var index = 1;
+
+    if (test.scrollTop < test1.offsetTop)
+        index = 1;
+    else if (test.scrollTop >= test1.offsetTop && test.scrollTop < test2.offsetTop)
+        index = 2;
+    else if (test.scrollTop >= test2.offsetTop && test.scrollTop < test3.offsetTop)
+        index = 3;
+    else if (test.scrollTop >= test3.offsetTop && test.scrollTop < test4.offsetTop)
+        index = 4;
+    else if (test.scrollTop >= test4.offsetTop && test.scrollTop < test5.offsetTop)
+        index = 5;
+    else
+        index = 1;
 
     if (test.scrollTop <= 100 && nav.className === "navbar") {
-        nav.style.backgroundColor = 'transparent';
+        nav.style.backgroundColor = 'rgba(255,255,255,0)';
         nav.style.boxShadow = 'none';
-        nav.style.color = 'grey';
     } else {
         nav.style.backgroundColor = 'rgba(255,255,255,0.9)';
         nav.style.boxShadow = '0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)';
-        nav.style.color = 'black';
     }
+    for (var i = 0; i < nav.children.length; i++)
+        nav.children.item(i).style.color = 'inherit';
+    nav.children.item(index).style.color = 'red';
 }
 
 
@@ -63,7 +83,7 @@ function myFunction() {
 
     if (x.className === "navbar") {
         x.className += " responsive";
-        x.style.backgroundColor = 'white';
+        x.style.backgroundColor = 'rgba(255,255,255,0.9)';
         x.style.color = 'black';
     } else {
         x.className = "navbar";
