@@ -25,12 +25,13 @@ function showInfo(data, tabletop) {
                     <div class="card__side card__side--back">
                         <div class="card__description">
                         <p>
-                            ${d['Email']}
+                            <a href='mailto:${d['Email']}' style="color: inherit; text-decoration: inherit;">${d['Email']}</a>
                             </p>
                         </div>
                     </div></div>`;
 
         document.getElementById('test').appendChild(iDiv);
+        document.getElementById('test').style.gridTemplateColumns = `repeat(${data.length}, calc(24%))`;
         console.log(d);
     })
 
