@@ -32,7 +32,7 @@ function showInfo(data, tabletop) {
 
         document.getElementById('test').appendChild(iDiv);
         document.getElementById('test').style.gridTemplateColumns = `repeat(${data.length}, calc(24%))`;
-        console.log(d);
+        // console.log(d);
     })
 
 }
@@ -40,7 +40,6 @@ function showInfo(data, tabletop) {
 window.addEventListener('DOMContentLoaded', init)
 
 const sliders = document.querySelectorAll('.slide-in');
-scrl();
 
 function scrl() {
 
@@ -98,7 +97,7 @@ function test() {
     scrl();
 }
 
-console.log(sliders);
+// console.log(sliders);
 
 const appearOptions = {
     threshold: 0,
@@ -134,6 +133,7 @@ function showPage() {
     document.getElementById("artboard").style.display = "none";
     document.getElementById("page").style.display = "block";
     document.getElementById("nbr").style.display = "flex";
+    scrl();
 }
 
 
