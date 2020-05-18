@@ -31,7 +31,7 @@ function showInfo(data, tabletop) {
                     </div></div>`;
 
         document.getElementById('test').appendChild(iDiv);
-        document.getElementById('test').style.gridTemplateColumns = `repeat(${data.length}, calc(24%))`;
+        // document.getElementById('test').style.gridTemplateColumns = `repeat(${data.length}, calc(24%))`;
         // console.log(d);
     })
 

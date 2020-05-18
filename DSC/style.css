@@ -262,6 +262,15 @@ html {
     justify-content: center;
 }
 
+.s {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .static {
     /* background-color: #D2E3FC; */
     /* background: rgba( 103, 108, 114, 0.2); */
@@ -279,13 +288,13 @@ html {
     z-index: -1;
 }
 
-.bg::after {
+
+/* .bg::after {
     background: linear-gradient(90deg, #eee 1%, transparent 5%) 1px 0, linear-gradient(180deg, #eee 1%, transparent 5%) 1px 0, #fff;
     background-size: 50px 50px;
     width: 100vw;
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
-}
+} */
 
 .bg svg {
     width: 90%;
@@ -352,7 +361,7 @@ html {
     margin-right: auto;
     padding: 10px;
     width: auto;
-    height: 50px;
+    height: 80px;
     float: left;
 }
 
@@ -584,20 +593,19 @@ h3 {
 }
 
 .content {
-    height: 100vh;
     width: 100%;
     text-align: center;
 }
 
 .cards {
     display: grid;
-    grid-gap: 5px;
-    grid-template-columns: repeat(16, calc(24%));
+    /* grid-gap: 5px; */
+    grid-template-columns: repeat(4, calc(25%));
     grid-template-rows: minmax(350px, 1fr);
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
     overflow-y: hidden;
     scroll-snap-type: x proximity;
-    padding: 20px;
+    padding: 25px;
     margin-top: 2%;
 }
 
@@ -607,6 +615,7 @@ h3 {
     position: relative;
     height: 25em;
     perspective: 150em;
+    margin: 20px;
 }
 
 .card__side {
@@ -676,10 +685,6 @@ h3 {
 .button img {
     width: 50px;
     height: 50px;
-}
-
-#footer {
-    height: 50vh;
 }
 
 #slideshow {
@@ -753,7 +758,7 @@ canvas {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 92%, 25% 100%, 0% 94%);
     }
     #im {
-        height: 40px;
+        height: 50px;
         width: auto;
     }
     h1 {
@@ -839,8 +844,7 @@ canvas {
     #footer {
         height: 30vh;
     }
-    #slideshow,
-    #team {
+    #slideshow {
         height: 60vh;
     }
 }
