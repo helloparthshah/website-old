@@ -61,8 +61,8 @@ function scrl() {
     var test1 = document.getElementById("a");
     var test2 = document.getElementById("wksp");
     var test3 = document.getElementById("slideshow");
-    var test4 = document.getElementById("team");
-    var test5 = document.getElementById("footer");
+    // var test4 = document.getElementById("team");
+    var test4 = document.getElementById("footer");
     var index = 1;
 
     if (test.scrollTop < test1.offsetTop)
@@ -73,8 +73,8 @@ function scrl() {
         index = 3;
     else if (test.scrollTop >= test3.offsetTop && test.scrollTop < test4.offsetTop)
         index = 4;
-    else if (test.scrollTop >= test4.offsetTop && test.scrollTop < test5.offsetTop)
-        index = 5;
+    // else if (test.scrollTop >= test4.offsetTop && test.scrollTop < test5.offsetTop)
+    //     index = 5;
     else
         index = 1;
 
