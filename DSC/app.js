@@ -12,7 +12,7 @@ function showInfo(data, tabletop) {
     data.forEach(d => {
         var iDiv = document.createElement('div');
 
-        iDiv.innerHTML = `<div class="card">
+        /* iDiv.innerHTML = `<div class="card">
                     <div class="card__side card__side--front card__side--front-1 ">
                         <div class="card__description">
                             <img class="memb" src="${d['Pictures']}" onerror="this.onerror=''; this.src='https://nyrevconnect.com/wp-content/uploads/2017/06/Placeholder_staff_photo-e1505825573317.png;'"></img>
@@ -29,7 +29,22 @@ function showInfo(data, tabletop) {
                             </p>
                         </div>
                     </div>
-                    </div>`;
+                    </div>`; */
+
+        iDiv.innerHTML =
+            `<div class="card">
+            <div>
+                <img class="memb" src="${d['Pictures']}" onerror="this.onerror=''; this.src='https://nyrevconnect.com/wp-content/uploads/2017/06/Placeholder_staff_photo-e1505825573317.png;'"></img>
+                </div>
+                <div>
+                    <h1>${d['First Name']} ${d['Last Name']}</h1>
+                </div>
+                <div>
+                    <p>
+                        <a href='mailto:${d[' Email ']}' style="color: inherit; text-decoration: inherit;">${d['Email']}</a>
+                    </p>
+                </div>
+            </div>`;
 
         var dDiv = document.createElement('div');
         dDiv.id = d['Post'].split(/[ ,]+/)[0];
