@@ -28,11 +28,34 @@ function showInfo(data, tabletop) {
                             <a href='mailto:${d['Email']}' style="color: inherit; text-decoration: inherit;">${d['Email']}</a>
                             </p>
                         </div>
-                    </div></div>`;
+                    </div>
+                    </div>`;
 
-        document.getElementById('test').appendChild(iDiv);
-        // document.getElementById('test').style.gridTemplateColumns = `repeat(${data.length}, calc(24%))`;
-        // console.log(d);
+        var dDiv = document.createElement('div');
+        dDiv.id = d['Post'].split(/[ ,]+/)[0];
+
+        dDiv.className = 'cards';
+
+        if (!document.querySelector(`#${d['Post'].split(/[ ,]+/)[0]}`)) {
+            document.getElementById('test').innerHTML += `<div id="post" class="title post"><h2>${d['Post']}</h2></div>`
+            document.getElementById('test').appendChild(dDiv);
+        }
+
+        document.querySelector(`#${d['Post'].split(/[ ,]+/)[0]}`).appendChild(iDiv);
+    })
+
+    Posts = document.querySelectorAll('#post');
+
+    var arr = ['#EB4235', '#4285F6', '#109E57', '#FBBD03', '#EB4235', '#4285F6', '#109E57', '#FBBD03'];
+
+    var k = 0;
+
+    Posts.forEach(p => {
+        p.style.backgroundColor = arr[k];
+
+        var style1 = p.style;
+        style1.setProperty('--background', arr[k++]);
+        // p.pseudoStyle("after", "background", arr[k++]);
     })
 
 }
@@ -135,7 +158,12 @@ sliders.forEach(slider => {
 var myVar;
 
 function Load() {
-    myVar = setTimeout(showPage, 3000);
+    if (!readCookie("adSeen")) {
+        myVar = setTimeout(showPage, 3000);
+        createCookie("adSeen", "1", 10);
+    } else {
+        showPage();
+    }
 }
 
 function showPage() {
@@ -147,6 +175,33 @@ function showPage() {
     document.getElementById("page").style.display = "block";
     document.getElementById("nbr").style.display = "flex";
     scrl();
+}
+
+/* $(document).ready(function() {
+    if (!readCookie("adSeen")) {
+        $(".referralProgram").fadeIn("slow");
+        createCookie("adSeen", "1", 10);
+    }
+}); */
+
+function createCookie(name, value, mins) {
+    if (mins) {
+        var date = new Date();
+        date.setTime(date.getTime() + (mins * 60 * 1000));
+        var expires = "; expires=" + date.toGMTString();
+    } else var expires = "";
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
 }
 
 

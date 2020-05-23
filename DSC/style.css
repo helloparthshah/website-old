@@ -371,7 +371,19 @@ html {
     background-image: linear-gradient(to bottom, #EB4235, #4285F6, #109E57);
     width: 10px;
     height: 210vh;
-    margin-left: 60px;
+    margin-left: 100px;
+    position: absolute;
+    z-index: 1;
+}
+
+.bar_team {
+    /* border-left: 10px solid green; */
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom, #EB4235, #4285F6, #109E57, #FBBD03, #EB4235, #4285F6, #109E57, #FBBD03);
+    width: 10px;
+    height: 100%;
+    float: left;
+    margin-left: 100px;
     position: absolute;
     z-index: 1;
 }
@@ -380,7 +392,7 @@ html {
     /* text-align: center; */
     display: flex;
     flex-direction: column;
-    margin-left: 60px;
+    margin-left: 123px;
     color: white;
     flex: 1;
 }
@@ -411,11 +423,14 @@ html {
     top: 50%;
     width: 0;
     height: 0;
-    border: 17px solid transparent;
-    border-right-color: #EB4235;
+    border-right: 40px solid #EB4235;
+    /* border-right-color: #EB4235; */
+    border-bottom: 17px solid transparent;
     border-left: 0;
     margin-top: -17px;
-    margin-left: -17px;
+    border-top: 17px solid transparent;
+    border-left: 0px solid transparent;
+    margin-left: -40px;
 }
 
 .wksp {
@@ -425,6 +440,15 @@ html {
 
 .wksp:after {
     border-right-color: #4285F6;
+}
+
+.post {
+    background: #4285F6;
+    width: 30%;
+}
+
+.post:after {
+    border-right-color: var(--background);
 }
 
 .text h2 {
@@ -481,12 +505,16 @@ html {
 .team {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: end;
     justify-content: center;
     height: 100%;
     width: 100%;
     text-align: center;
     position: relative;
+}
+
+#test {
+    margin-left: 123px;
 }
 
 h1 {
@@ -747,10 +775,10 @@ canvas {
     .card__side {
         font-size: 20px;
     }
-    .bg,
+    /* .bg,
     .section {
         height: 100vh;
-    }
+    } */
     #about {
         display: block;
     }
@@ -771,15 +799,6 @@ canvas {
     p {
         font-size: 16px;
         margin: 0;
-    }
-    .cards {
-        grid-gap: 5px;
-        grid-template-columns: repeat(16, calc(70%));
-        grid-template-rows: minmax(350px, 1fr);
-    }
-    .card {
-        height: 40vh;
-        width: 200px;
     }
     .memb {
         height: 150px;
