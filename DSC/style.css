@@ -659,11 +659,6 @@ h3 {
     font-size: 35px;
 }
 
-
-/* .card img {
-    flex: 2;
-} */
-
 .card div {
     flex: 1;
 }
@@ -735,6 +730,12 @@ canvas {
     height: 50vh;
 }
 
+#tt {
+    color: #202124;
+    margin-left: 123px;
+    margin-bottom: 60px;
+}
+
 @media only screen and (max-width: 1000px) {
     .from-down1,
     .from-down2.from-down3 {
@@ -749,8 +750,33 @@ canvas {
         transition: 0.3s;
         margin: 0;
     }
-    .card__side {
-        font-size: 20px;
+    #tt {
+        margin-left: 56px;
+    }
+    .bar_team {
+        margin-left: 50px;
+    }
+    #test {
+        margin-left: 73px;
+    }
+    .post {
+        width: 80%;
+    }
+    #post h2 {
+        font-size: 50px;
+    }
+    .cards {
+        grid-gap: 20px;
+        grid-template-columns: repeat(10, calc(100%));
+        grid-template-rows: minmax(350px, 1fr);
+        overflow-x: scroll;
+        overflow-y: hidden;
+        padding: 50px;
+    }
+    .card {
+        max-width: 300px;
+        width: 100%;
+        height: 20em;
     }
     /* .bg,
     .section {
