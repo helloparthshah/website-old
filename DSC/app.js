@@ -68,15 +68,48 @@ function initWk() {
     })
 }
 
+function expand(elem) {
+    elem.parent()[0].className = 'eventCard fullscreen';
+    $(elem).parent()[0].style.left = '0';
+    $(elem).parent()[0].style.top = '0';
+    elem.parent()[0].children[0].style.display = 'block';
+    elem.parent()[0].querySelector(".writeup").style.display = "block";
+    elem.parent()[0].querySelector(".memb").className = "memb fsrn"
+}
+
+function contract(elem) {
+    elem.parent()[0].className = 'eventCard';
+    position = elem.parent()[0].getBoundingClientRect();
+    $(elem).parent()[0].style.top = position.top + "px";
+    $(elem).parent()[0].style.left = position.left + "px";
+    elem.parent()[0].children[0].style.display = 'none';
+    elem.parent()[0].querySelector(".writeup").style.display = "none";
+    elem.parent()[0].querySelector(".memb.fsrn").className = "memb"
+}
+
+function setOffset() {
+    var xall = document.querySelectorAll('.eventCard');
+    xall.forEach(x => {
+
+        position = $(x)[0].getBoundingClientRect();
+
+        $(x)[0].style.top = position.top + "px";
+        $(x)[0].style.left = position.left + "px";
+
+    })
+}
+
 function showInfoWk(data, tabletop) {
     data.forEach(d => {
         var iDiv = document.createElement('div');
         //.className='eventCard fullscreen'
         //this.parentElement.className='eventCard fullscreen'
+        //   $(this).parent().style.top = 0; $(this).parent().style.left=0; 
         iDiv.innerHTML =
             `<div class="eventCard">
-            <div onclick="this.parentElement.className='eventCard';" style="height:20px; right:0;">close</div>
-            <div onclick="$(this).parent().toggleClass('fullscreen');">
+            <div onclick="contract($(this));" style="height:20px; display:none;"><a class="close"></a></div>
+            <div onclick="expand($(this));">
+            <div >
                 <img class="memb" src="${d['Pictures']}" onerror="this.onerror=''; this.src='https://nyrevconnect.com/wp-content/uploads/2017/06/Placeholder_staff_photo-e1505825573317.png;'"></img>
                 </div>
                 <div>
@@ -87,16 +120,18 @@ function showInfoWk(data, tabletop) {
                     ${d['Date']}, ${d['Time']}, ${d['Location']}
                     </p>
                 </div>
+                <div style="display:none"; class="writeup">
+                    <p>
+                    ${d['Writeup']}
+                    </p>
+                </div>
+                </div>
             </div>`;
 
         document.getElementById('test1').appendChild(iDiv);
-        console.log(d);
     })
+    setOffset();
 }
-
-/* function expand() {
-    const nav = document.querySelector('#nbr');
-} */
 
 window.addEventListener('DOMContentLoaded', init)
 window.addEventListener('DOMContentLoaded', initWk)
@@ -104,6 +139,8 @@ window.addEventListener('DOMContentLoaded', initWk)
 const sliders = document.querySelectorAll('.slide-in');
 
 function scrl1() {
+    setOffset();
+
     const nav = document.querySelector('#nbr');
     var test = document.querySelector('html');
 
