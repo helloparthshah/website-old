@@ -729,10 +729,10 @@
     
     .memb {
         object-fit: cover;
-        border-radius: 50%;
-        height: 200px;
-        width: 80%;
-        max-width: 200px;
+        border-radius: 15px 15px 0 0;
+        height: 250px;
+        width: 100%;
+        max-width: 320px;
         transition: 0.3s ease-in-out 0.2s;
     }
     
@@ -740,8 +740,8 @@
         object-fit: cover;
         border-radius: 10px;
         height: 400px;
-        width: 80%;
-        max-width: 400px;
+        width: 600px;
+        max-width: 600px;
     }
     
     .foo p {
