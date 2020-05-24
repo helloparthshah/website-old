@@ -732,7 +732,7 @@
         border-radius: 15px 15px 0 0;
         height: 250px;
         width: 100%;
-        max-width: 320px;
+        max-width: 100%;
         transition: 0.3s ease-in-out 0.2s;
     }
     
@@ -896,8 +896,11 @@
             margin: 0;
         }
         .memb {
-            height: 150px;
-            width: 150px;
+            height: 200px;
+        }
+        .memb.fsrn {
+            width: 100%;
+            max-width: unset;
         }
         .icon {
             font-size: 30px;
