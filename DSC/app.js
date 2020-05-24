@@ -12,25 +12,6 @@ function showInfo(data, tabletop) {
     data.forEach(d => {
         var iDiv = document.createElement('div');
 
-        /* iDiv.innerHTML = `<div class="card">
-                    <div class="card__side card__side--front card__side--front-1 ">
-                        <div class="card__description">
-                            <img class="memb" src="${d['Pictures']}" onerror="this.onerror=''; this.src='https://nyrevconnect.com/wp-content/uploads/2017/06/Placeholder_staff_photo-e1505825573317.png;'"></img>
-                            <div>
-                                <h1>${d['First Name']} ${d['Last Name']}</h1>
-                                <p>${d['Post']}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card__side card__side--back">
-                        <div class="card__description">
-                        <p>
-                            <a href='mailto:${d['Email']}' style="color: inherit; text-decoration: inherit;">${d['Email']}</a>
-                            </p>
-                        </div>
-                    </div>
-                    </div>`; */
-
         iDiv.innerHTML =
             `<div class="card">
             <div>
@@ -70,12 +51,55 @@ function showInfo(data, tabletop) {
 
         var style1 = p.style;
         style1.setProperty('--background', arr[k++]);
+        if (k == 4)
+            k = 0;
         // p.pseudoStyle("after", "background", arr[k++]);
     })
 
 }
 
+var publicSpreadsheetUrl1 = 'https://docs.google.com/spreadsheets/d/1iFIQugt59vQug7MyzHKWL7QBOOBK32hR6TCX2GhQtq0/edit?usp=sharing';
+
+function initWk() {
+    Tabletop.init({
+        key: publicSpreadsheetUrl1,
+        callback: showInfoWk,
+        simpleSheet: true
+    })
+}
+
+function showInfoWk(data, tabletop) {
+    data.forEach(d => {
+        var iDiv = document.createElement('div');
+        //.className='eventCard fullscreen'
+        //this.parentElement.className='eventCard fullscreen'
+        iDiv.innerHTML =
+            `<div class="eventCard">
+            <div onclick="this.parentElement.className='eventCard';" style="height:20px; right:0;">close</div>
+            <div onclick="$(this).parent().toggleClass('fullscreen');">
+                <img class="memb" src="${d['Pictures']}" onerror="this.onerror=''; this.src='https://nyrevconnect.com/wp-content/uploads/2017/06/Placeholder_staff_photo-e1505825573317.png;'"></img>
+                </div>
+                <div>
+                    <h1>${d['Name']}</h1>
+                </div>
+                <div>
+                    <p>
+                    ${d['Date']}, ${d['Time']}, ${d['Location']}
+                    </p>
+                </div>
+            </div>`;
+
+        document.getElementById('test1').appendChild(iDiv);
+        console.log(d);
+    })
+}
+
+/* function expand() {
+    const nav = document.querySelector('#nbr');
+} */
+
 window.addEventListener('DOMContentLoaded', init)
+window.addEventListener('DOMContentLoaded', initWk)
 
 const sliders = document.querySelectorAll('.slide-in');
 
