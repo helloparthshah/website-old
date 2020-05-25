@@ -22,7 +22,10 @@ function showInfo(data, tabletop) {
                 </div>
                 <div>
                     <p>
-                        <a href='mailto:${d[' Email ']}' style="color: inherit; text-decoration: inherit;">${d['Email']}</a>
+                    ${d['Title']}
+                    </p>
+                    <p>
+                        <a href='mailto:${d['Email']}' style="color: inherit; text-decoration: inherit;">${d['Email']}</a>
                     </p>
                 </div>
             </div>`;
@@ -72,9 +75,10 @@ function expand(elem) {
     elem.parent()[0].className = 'eventCard fullscreen';
     $(elem).parent()[0].style.left = '0';
     $(elem).parent()[0].style.top = '0';
-    elem.parent()[0].children[0].style.display = 'block';
-    elem.parent()[0].querySelector(".writeup").style.display = "block";
-    elem.parent()[0].querySelector(".memb").className = "memb fsrn"
+    elem.parent()[0].children[0].style.display = 'inline-block';
+    elem.parent()[0].querySelector(".writeup").style.display = "inline-block";
+    elem.parent()[0].querySelector(".writeup").style.opacity = "100%";
+    // elem.parent()[0].querySelector(".memb").className = "memb fsrn"
 }
 
 function contract(elem) {
@@ -84,7 +88,9 @@ function contract(elem) {
     $(elem).parent()[0].style.left = position.left + "px";
     elem.parent()[0].children[0].style.display = 'none';
     elem.parent()[0].querySelector(".writeup").style.display = "none";
-    elem.parent()[0].querySelector(".memb.fsrn").className = "memb"
+    elem.parent()[0].querySelector(".writeup").style.opacity = "0%";
+    elem.querySelector(".video").pause();
+    // elem.parent()[0].querySelector(".memb.fsrn").className = "memb"
 }
 
 function setOffset() {
@@ -100,18 +106,30 @@ function setOffset() {
 }
 
 function showInfoWk(data, tabletop) {
+    var latest = true;
     data.forEach(d => {
         var iDiv = document.createElement('div');
         //.className='eventCard fullscreen'
         //this.parentElement.className='eventCard fullscreen'
-        //   $(this).parent().style.top = 0; $(this).parent().style.left=0; 
+        //   $(this).parent().style.top = 0; $(this).parent().style.left=0;
+
+        /* <iframe width = "560"
+        height = "315"
+        src = "${d['Video']}"
+        frameborder = "0"
+        allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen> </iframe> */
         iDiv.innerHTML =
             `<div class="eventCard">
             <div onclick="contract($(this));" style="height:20px; display:none;"><a class="close"></a></div>
-            <div onclick="expand($(this));">
-            <div >
+            <div class="wkcontent" onclick="expand($(this));">
+            <div style="width:100%">
                 <img class="memb" src="${d['Pictures']}" onerror="this.onerror=''; this.src='https://nyrevconnect.com/wp-content/uploads/2017/06/Placeholder_staff_photo-e1505825573317.png;'"></img>
-                </div>
+                <iframe class="video" 
+                src = "${d['Video']}"
+                frameborder = "0"
+                allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen> </iframe>
                 <div>
                     <h1>${d['Name']}</h1>
                 </div>
@@ -120,15 +138,46 @@ function showInfoWk(data, tabletop) {
                     ${d['Date']}, ${d['Time']}, ${d['Location']}
                     </p>
                 </div>
-                <div style="display:none"; class="writeup">
+                </div>
+                <div style="display:none; opacity:0%;"; class="writeup">
                     <p>
                     ${d['Writeup']}
                     </p>
+                    <a href="${d['Link']}">Register</a>
                 </div>
                 </div>
             </div>`;
-
-        document.getElementById('test1').appendChild(iDiv);
+        if (latest == true) {
+            iDiv.innerHTML =
+                `<div class="eventCard">
+            <div onclick="contract($(this));" style="height:20px; display:none;"><a class="close"></a></div>
+            <div class="wkcontent" onclick="expand($(this));">
+            <div style="width:100%">
+                <img class="memb" src="${d['Pictures']}" onerror="this.onerror=''; this.src='https://nyrevconnect.com/wp-content/uploads/2017/06/Placeholder_staff_photo-e1505825573317.png;'"></img>
+                <img class="video" src="${d['Pictures']}" onerror="this.onerror=''; this.src='https://nyrevconnect.com/wp-content/uploads/2017/06/Placeholder_staff_photo-e1505825573317.png;'"></img>
+                
+                <div>
+                    <h1>${d['Name']}</h1>
+                </div>
+                <div>
+                    <p>
+                    ${d['Date']}, ${d['Time']}, ${d['Location']}
+                    </p>
+                </div>
+                </div>
+                <div style="display:none; opacity:0%;"; class="writeup">
+                    <p>
+                    ${d['Writeup']}
+                    </p>
+                    <a href="${d['Link']}">Register</a>
+                </div>
+                </div>
+            </div>`;
+            document.getElementById('latest').appendChild(iDiv);
+        } else {
+            document.getElementById('test1').appendChild(iDiv);
+        }
+        latest = false;
     })
     setOffset();
 }
