@@ -878,7 +878,7 @@ canvas {
     display: flex;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 600px) {
     .from-down1,
     .from-down2.from-down3 {
         transition: opacity 250ms ease-in-out, transform 400ms ease-in-out;
