@@ -1,3 +1,6 @@
 [submodule "dscucdavis"]
 	path = dscucdavis
 	url = https://github.com/dscucdavis/dscucdavis
+[submodule "raytracing"]
+	path = raytracing
+	url = https://github.com/parthshah01/raytracing
