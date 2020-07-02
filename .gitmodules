@@ -4,3 +4,6 @@
 [submodule "raytracing"]
 	path = raytracing
 	url = https://github.com/parthshah01/raytracing
+[submodule "neubleweb"]
+	path = neubleweb
+	url = https://github.com/parthshah01/neubleweb
