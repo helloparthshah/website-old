@@ -7,3 +7,6 @@
 [submodule "neubleweb"]
 	path = neubleweb
 	url = https://github.com/parthshah01/neubleweb
+[submodule "windsim"]
+	path = windsim
+	url = https://github.com/parthshah01/windsim
