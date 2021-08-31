@@ -10,3 +10,6 @@
 [submodule "windsim"]
 	path = windsim
 	url = https://github.com/parthshah01/windsim
+[submodule "ropeSimulation"]
+	path = ropeSimulation
+	url = https://github.com/helloparthshah/ropeSimulation
