@@ -13,6 +13,3 @@
 [submodule "ropeSimulation"]
 	path = ropeSimulation
 	url = https://github.com/helloparthshah/ropeSimulation
-[submodule "algoVis"]
-	path = algoVis
-	url = https://github.com/helloparthshah/algoVis
