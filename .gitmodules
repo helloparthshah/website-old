@@ -3,19 +3,16 @@
 	url = https://github.com/dscucdavis/dscucdavis
 [submodule "raytracing"]
 	path = raytracing
-	url = https://github.com/parthshah01/raytracing
+	url = https://github.com/helloparthshah/raytracing
 [submodule "neubleweb"]
 	path = neubleweb
-	url = https://github.com/parthshah01/neubleweb
+	url = https://github.com/helloparthshah/neubleweb
 [submodule "windsim"]
 	path = windsim
-	url = https://github.com/parthshah01/windsim
+	url = https://github.com/helloparthshah/windsim
 [submodule "ropeSimulation"]
 	path = ropeSimulation
 	url = https://github.com/helloparthshah/ropeSimulation
 [submodule "algoVisualizer"]
 	path = algoVisualizer
 	url = https://github.com/helloparthshah/algoVisualizer
-[submodule "webgl"]
-	path = webgl
-	url = https://github.com/helloparthshah/webgl
