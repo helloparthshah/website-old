@@ -16,6 +16,3 @@
 [submodule "algoVisualizer"]
 	path = algoVisualizer
 	url = https://github.com/helloparthshah/algoVisualizer
-[submodule "webgl"]
-	path = webgl
-	url = git@github.com:helloparthshah/webgl.git
