@@ -19,3 +19,6 @@
 [submodule "webgl"]
 	path = webgl
 	url = https://github.com/helloparthshah/webgl
+[submodule "mountainJavascript"]
+	path = mountainJavascript
+	url = https://github.com/helloparthshah/mountainJavascript
