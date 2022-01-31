@@ -22,3 +22,6 @@
 [submodule "mountainJavascript"]
 	path = mountainJavascript
 	url = https://github.com/helloparthshah/mountainJavascript
+[submodule "minimax"]
+	path = minimax
+	url = https://github.com/helloparthshah/minimax
